@@ -1,34 +1,22 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Random;
 import java.util.Vector;
 
-public class Golosinas {
+public class Golosinas implements Comparator<Golosinas> {
 
-    protected int codigo;
-    protected String descripcion;
-    protected ArrayList<String> sabores = new ArrayList<String>();
-    protected double precioUnitario;
+    private int codigo;
+    private String descripcion;
+    private String[] sabores = new String[2];
+    private double precioUnitario;
 
-    /*Constructor  alternativo:  recibe  como  primer  parámetro  la  capacidad  inicial  de  la
-    colección  de  enteros  y  llena  esas  posiciones  con  valores  generados  al  azar  de  4
-    dígitos enteros positivos. Como segundo parámetro, un vector con varios objetos de
-    la clase Golosinas y los asigna al ArrayList correspondiente.*/
-
-    public Golosinas(int capacidad, Vector<Golosinas> golosinas){
-        Random rand = new Random();
-
-    }
-
-    public Golosinas(int codigo, String descripcion, ArrayList<String> sabores, double precioUnitario) {
+    public Golosinas(int codigo, String descripcion, String[] sabores, double precioUnitario) {
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.sabores = sabores;
         this.precioUnitario = precioUnitario;
-    }
-
-    public Golosinas() {
     }
 
     public int getCodigo() {
@@ -47,11 +35,11 @@ public class Golosinas {
         this.descripcion = descripcion;
     }
 
-    public ArrayList<String> getSabores() {
+    public String[] getSabores() {
         return sabores;
     }
 
-    public void setSabores(ArrayList<String> sabores) {
+    public void setSabores(String[] sabores) {
         this.sabores = sabores;
     }
 
@@ -61,5 +49,10 @@ public class Golosinas {
 
     public void setPrecioUnitario(double precioUnitario) {
         this.precioUnitario = precioUnitario;
+    }
+
+    @Override
+    public int compare(Golosinas o1, Golosinas o2) {
+        return Double.compare(o2.getPrecioUnitario(), o1.getPrecioUnitario());
     }
 }
