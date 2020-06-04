@@ -1,9 +1,8 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Random;
-import java.util.Vector;
+import controller.Excepciones;
+
+import java.util.*;
 
 public class Clase1 {
 
@@ -13,14 +12,16 @@ public class Clase1 {
     /*Como segundo parámetro, un vector con varios objetos de
     la clase Golosinas y los asigna al ArrayList correspondiente.*/
 
-    public Clase1(int capacidad, Vector<Golosinas> golosinas){
+    public Clase1(int capacidad, Golosinas[] golosinas){
         this.enteros = new ArrayList<Integer>(capacidad);
 
         Random rand = new Random();
 
-        this.enteros.add(rand.nextInt(4));
+        for(int i = 0; i < capacidad; i++){
+            this.enteros.add((rand.nextInt(8999) + 1000));
+        }
 
-        this.golosinas.addAll(golosinas);
+        Collections.addAll(this.golosinas, golosinas);
 
     }
 
@@ -47,4 +48,53 @@ public class Clase1 {
     public void setEnteros(ArrayList<Integer> enteros) {
         this.enteros = enteros;
     }
+
+    public int maximoValor(){
+
+        return Collections.max(getEnteros());
+    }
+
+    public void quitarObjeto (Golosinas golosina) throws Excepciones {
+
+
+        if (getGolosinas().contains(golosina)){
+            getGolosinas().remove(golosina);
+        } else {
+            throw new Excepciones("no existe el objeto");
+        }
+    }
+
+    public void ordenDescendente(){
+        /*devuelve  la  colección  de  objetos  de  la  clase  Golosinas ordenada en forma descendente, según el precio.*/
+
+
+//        Collections.sort(getGolosinas());
+
+    }
+
+    public void hayRepetidos(){
+        /*indica  si  existen  valores  repetidos  en  la  colección  de  objetos Golosinas, según un criterio diferente al punto c*/
+    }
+
+    public void igualValores(List <Integer> lista){
+        /*indica si la colección recibida como argumento  tiene algún valor en común, respecto a la estructura  existente*/
+
+    }
+
+    public void agregar(List<Golosinas> golosinas){
+        /*agrega  la  lista  recibida  como  argumento  al  final  del ArrayList propio.*/
+    }
+
+    public void busquedaMultiple(Integer entero){
+        /*retorna  la  cantidad  de  veces  que  se  encuentra  un número en la colección. De no existir, lanza la misma excepción del punto c.*/
+    }
+
+    public void distintosValores(List <Golosinas> golosinas) {
+        /*devuelve un ArrayList con aquellos objetos que no coinciden con los recibidos como argumentos.*/
+    }
+
+    public void copiarLista(int pos1, int pos2) {
+        /*copiar en una lista nueva las posiciones de la lista de enteros, comprendidas entre los argumentos recibidos.*/
+    }
+
 }
