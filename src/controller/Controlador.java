@@ -2,9 +2,7 @@ package controller;
 import model.*;
 import view.Mostrar;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Vector;
+import java.util.*;
 
 public class Controlador {
     static Golosinas golosina1 = new Golosinas(1245, "Milka", new String[]{"dulce", "amargo"}, 156.1);
@@ -38,12 +36,14 @@ public class Controlador {
         golosinas[2] = golosina3;
         golosinas[3] = golosina4;
         Clase1 clase1 = new Clase1(10, golosinas);
+
         try {
             clase1.quitarObjeto(golosina3);
-            Mostrar.mostrar(golosina3.getDescripcion() + " ha sido borrada");
         } catch (Excepciones excepciones) {
             excepciones.printStackTrace();
         }
+        Mostrar.mostrar(golosina3.getDescripcion() + " ha sido borrada");
+
     }
 
     public static void opcion2() {
@@ -60,9 +60,15 @@ public class Controlador {
         golosinas[0] = golosina1;
         golosinas[1] = golosina2;
         golosinas[2] = golosina3;
-        golosinas[3] = golosina4;
+        golosinas[3] = golosina2;
         Clase1 clase1 = new Clase1(10, golosinas);
-        clase1.hayRepetidos();
+        boolean repetidos = clase1.hayRepetidos();
+
+        if (repetidos) {
+            Mostrar.mostrar("Hay repetidos");
+        } else {
+            Mostrar.mostrar("No hay repetidos");
+        }
     }
 
     public static void opcion4() {
@@ -71,7 +77,18 @@ public class Controlador {
         golosinas[2] = golosina3;
         golosinas[3] = golosina4;
         Clase1 clase1 = new Clase1(10, golosinas);
-//        clase1.igualValores();
+
+        Random rand = new Random();
+        ArrayList<Integer> enterosAux = new ArrayList<Integer>();
+        enterosAux.add(rand.nextInt(8999) + 1000);
+        enterosAux.add(rand.nextInt(8999) + 1000);
+        boolean distinto = clase1.igualValores(enterosAux);
+
+        if (!distinto) {
+            Mostrar.mostrar("Hay valores en comun");
+        } else {
+            Mostrar.mostrar("No hay valores en comun");
+        }
     }
 
     public static void opcion5() {
@@ -80,7 +97,14 @@ public class Controlador {
         golosinas[2] = golosina3;
         golosinas[3] = golosina4;
         Clase1 clase1 = new Clase1(10, golosinas);
-//        clase1.agregar();
+
+        Golosinas golosina5 = new Golosinas(1249, "Lays", new String[]{"salado", "jamon"}, 186.1);
+        Golosinas golosina6 = new Golosinas(1250, "Pringles", new String[]{"salado", "cebolla"}, 176.7);
+        ArrayList<Golosinas> golosinas = new ArrayList<Golosinas>();
+        golosinas.add(golosina5);
+        golosinas.add(golosina6);
+
+        clase1.agregar(golosinas);
     }
 
     public static void opcion6() {
@@ -89,7 +113,9 @@ public class Controlador {
         golosinas[2] = golosina3;
         golosinas[3] = golosina4;
         Clase1 clase1 = new Clase1(10, golosinas);
-//        clase1.busquedaMultiple();
+        Random rand = new Random();
+        int entero = rand.nextInt(8999) + 1000;
+        clase1.busquedaMultiple(entero);
     }
 
     public static void opcion7() {
@@ -98,7 +124,13 @@ public class Controlador {
         golosinas[2] = golosina3;
         golosinas[3] = golosina4;
         Clase1 clase1 = new Clase1(10, golosinas);
-//        clase1.distintosValores();
+        List<Golosinas> golosinasAux = new ArrayList<Golosinas>();
+        Golosinas golosina5 = new Golosinas(1249, "Lays", new String[]{"salado", "jamon"}, 186.1);
+        Golosinas golosina6 = new Golosinas(1250, "Pringles", new String[]{"salado", "cebolla"}, 176.7);
+        golosinasAux.add(golosina5);
+        golosinasAux.add(golosina6);
+
+        clase1.distintosValores(golosinasAux);
     }
 
     public static void opcion8() {
@@ -107,7 +139,10 @@ public class Controlador {
         golosinas[2] = golosina3;
         golosinas[3] = golosina4;
         Clase1 clase1 = new Clase1(10, golosinas);
-//        clase1.copiarLista();
+
+        int pos1 = 0;
+        int pos2 = 2;
+        clase1.copiarLista(pos1, pos2);
     }
 
 
