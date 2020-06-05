@@ -130,13 +130,31 @@ public class Clase1 {
         /*devuelve un ArrayList con aquellos objetos que no coinciden con los recibidos como argumentos.*/
         ArrayList<Golosinas> golosinasAux = new ArrayList<Golosinas>();
 
-
+        for (Golosinas g: golosinas
+             ) {
+            if (!this.golosinas.contains(g)){
+                golosinasAux.add(g);
+            }
+        }
 
         return golosinasAux;
     }
 
-    public void copiarLista(int pos1, int pos2) {
+    public ArrayList<Integer> copiarLista(int pos1, int pos2) {
         /*copiar en una lista nueva las posiciones de la lista de enteros, comprendidas entre los argumentos recibidos.*/
+        ArrayList<Integer> enterosAux = new ArrayList<Integer>();
+        int i;
+        if (pos1 < pos2){
+            try {
+                for (i = pos1; i < pos2; i++){
+                    enterosAux.add(this.enteros.get(i));
+                }
+            } catch (NullPointerException e){
+                e.printStackTrace();
+            }
+        }
+
+        return enterosAux;
     }
 
 }

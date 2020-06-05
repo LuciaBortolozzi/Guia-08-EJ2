@@ -103,6 +103,7 @@ public class Controlador {
         ArrayList<Golosinas> golosinas = new ArrayList<Golosinas>();
         golosinas.add(golosina5);
         golosinas.add(golosina6);
+
         clase1.agregar(golosinas);
     }
 
@@ -123,7 +124,13 @@ public class Controlador {
         golosinas[2] = golosina3;
         golosinas[3] = golosina4;
         Clase1 clase1 = new Clase1(10, golosinas);
-//        clase1.distintosValores();
+        List<Golosinas> golosinasAux = new ArrayList<Golosinas>();
+        Golosinas golosina5 = new Golosinas(1249, "Lays", new String[]{"salado", "jamon"}, 186.1);
+        Golosinas golosina6 = new Golosinas(1250, "Pringles", new String[]{"salado", "cebolla"}, 176.7);
+        golosinasAux.add(golosina5);
+        golosinasAux.add(golosina6);
+
+        clase1.distintosValores(golosinasAux);
     }
 
     public static void opcion8() {
@@ -132,7 +139,10 @@ public class Controlador {
         golosinas[2] = golosina3;
         golosinas[3] = golosina4;
         Clase1 clase1 = new Clase1(10, golosinas);
-//        clase1.copiarLista();
+
+        int pos1 = 0;
+        int pos2 = 2;
+        clase1.copiarLista(pos1, pos2);
     }
 
 
