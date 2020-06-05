@@ -1,7 +1,6 @@
 package model;
 
 import java.util.Comparator;
-import java.util.function.ToDoubleFunction;
 
 public class GolosinasByPrecio implements Comparator<Golosinas> {
 
