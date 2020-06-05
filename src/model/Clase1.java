@@ -96,19 +96,19 @@ public class Clase1 {
 
     public boolean igualValores(List<Integer> lista){
         /*indica si la colección recibida como argumento  tiene algún valor en común, respecto a la estructura  existente*/
-        boolean igual = false;
+        boolean distinto = false;
         try {
-            igual = Collections.disjoint(this.enteros, lista);
+            distinto = Collections.disjoint(this.enteros, lista);
         } catch (Exception e){
             e.printStackTrace();
         }
-        return igual;
+        return distinto;
     }
 
     public void agregar(List<Golosinas> golosinas){
         /*agrega  la  lista  recibida  como  argumento  al  final  del ArrayList propio.*/
 
-
+        this.golosinas.addAll(golosinas);
     }
 
     public int busquedaMultiple(Integer entero){

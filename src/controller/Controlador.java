@@ -82,9 +82,9 @@ public class Controlador {
         ArrayList<Integer> enterosAux = new ArrayList<Integer>();
         enterosAux.add(rand.nextInt(8999) + 1000);
         enterosAux.add(rand.nextInt(8999) + 1000);
-        boolean igual = clase1.igualValores(enterosAux);
+        boolean distinto = clase1.igualValores(enterosAux);
 
-        if (igual) {
+        if (!distinto) {
             Mostrar.mostrar("Hay valores en comun");
         } else {
             Mostrar.mostrar("No hay valores en comun");
@@ -97,7 +97,13 @@ public class Controlador {
         golosinas[2] = golosina3;
         golosinas[3] = golosina4;
         Clase1 clase1 = new Clase1(10, golosinas);
-//        clase1.agregar();
+
+        Golosinas golosina5 = new Golosinas(1249, "Lays", new String[]{"salado", "jamon"}, 186.1);
+        Golosinas golosina6 = new Golosinas(1250, "Pringles", new String[]{"salado", "cebolla"}, 176.7);
+        ArrayList<Golosinas> golosinas = new ArrayList<Golosinas>();
+        golosinas.add(golosina5);
+        golosinas.add(golosina6);
+        clase1.agregar(golosinas);
     }
 
     public static void opcion6() {
