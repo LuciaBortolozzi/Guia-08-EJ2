@@ -67,8 +67,7 @@ public class Clase1 {
     public void ordenDescendente(){
         /*devuelve  la  colección  de  objetos  de  la  clase  Golosinas ordenada en forma descendente, según el precio.*/
 
-
-//        Collections.sort(getGolosinas());
+        Collections.sort(getGolosinas(), new GolosinasByPrecio());
 
     }
 

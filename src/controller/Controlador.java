@@ -70,7 +70,7 @@ public class Controlador {
         golosinas[2] = golosina3;
 
         Clase1 clase1 = new Clase1(10, golosinas);
-        clase1.igualValores();
+//        clase1.igualValores();
     }
 
     public static void opcion5() {
@@ -79,7 +79,7 @@ public class Controlador {
         golosinas[2] = golosina3;
 
         Clase1 clase1 = new Clase1(10, golosinas);
-        clase1.agregar();
+//        clase1.agregar();
     }
 
     public static void opcion6() {
@@ -88,7 +88,7 @@ public class Controlador {
         golosinas[2] = golosina3;
 
         Clase1 clase1 = new Clase1(10, golosinas);
-        clase1.busquedaMultiple();
+//        clase1.busquedaMultiple();
     }
 
     public static void opcion7() {
@@ -97,7 +97,7 @@ public class Controlador {
         golosinas[2] = golosina3;
 
         Clase1 clase1 = new Clase1(10, golosinas);
-        clase1.distintosValores();
+//        clase1.distintosValores();
     }
 
     public static void opcion8() {
@@ -106,7 +106,7 @@ public class Controlador {
         golosinas[2] = golosina3;
 
         Clase1 clase1 = new Clase1(10, golosinas);
-        clase1.copiarLista();
+//        clase1.copiarLista();
     }
 
 

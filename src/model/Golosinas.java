@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.Random;
 import java.util.Vector;
 
-public class Golosinas implements Comparator<Golosinas> {
+public class Golosinas {
 
     private int codigo;
     private String descripcion;
@@ -51,8 +51,4 @@ public class Golosinas implements Comparator<Golosinas> {
         this.precioUnitario = precioUnitario;
     }
 
-    @Override
-    public int compare(Golosinas o1, Golosinas o2) {
-        return Double.compare(o2.getPrecioUnitario(), o1.getPrecioUnitario());
-    }
 }
