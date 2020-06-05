@@ -8,9 +8,10 @@ import java.util.Vector;
 
 public class Controlador {
     static Golosinas golosina1 = new Golosinas(1245, "Milka", new String[]{"dulce", "amargo"}, 156.1);
-    static Golosinas golosina2 = new Golosinas(1246, "Sugus", new String[]{"dulce", "acido"}, 123.7);
+    static Golosinas golosina2 = new Golosinas(1246, "Sugus", new String[]{"dulce", "acido"}, 156.7);
     static Golosinas golosina3 = new Golosinas(1247, "Bazooka", new String[]{"dulce", "acido"}, 98.6);
-    static Golosinas[] golosinas = new Golosinas[10];
+    static Golosinas golosina4 = new Golosinas(1248, "Rocklets", new String[]{"dulce", "amargo"}, 98.9);
+    static Golosinas[] golosinas = new Golosinas[4];
 
 
 
@@ -24,7 +25,7 @@ public class Controlador {
         golosinas[0] = golosina1;
         golosinas[1] = golosina2;
         golosinas[2] = golosina3;
-
+        golosinas[3] = golosina4;
         Clase1 clase1 = new Clase1(10, golosinas);
         int max = clase1.maximoValor();
         Mostrar.mostrar("Maximo: " + max);
@@ -35,7 +36,7 @@ public class Controlador {
         golosinas[0] = golosina1;
         golosinas[1] = golosina2;
         golosinas[2] = golosina3;
-
+        golosinas[3] = golosina4;
         Clase1 clase1 = new Clase1(10, golosinas);
         try {
             clase1.quitarObjeto(golosina3);
@@ -49,7 +50,7 @@ public class Controlador {
         golosinas[0] = golosina1;
         golosinas[1] = golosina2;
         golosinas[2] = golosina3;
-
+        golosinas[3] = golosina4;
         Clase1 clase1 = new Clase1(10, golosinas);
 
         clase1.ordenDescendente();
@@ -59,7 +60,7 @@ public class Controlador {
         golosinas[0] = golosina1;
         golosinas[1] = golosina2;
         golosinas[2] = golosina3;
-
+        golosinas[3] = golosina4;
         Clase1 clase1 = new Clase1(10, golosinas);
         clase1.hayRepetidos();
     }
@@ -68,7 +69,7 @@ public class Controlador {
         golosinas[0] = golosina1;
         golosinas[1] = golosina2;
         golosinas[2] = golosina3;
-
+        golosinas[3] = golosina4;
         Clase1 clase1 = new Clase1(10, golosinas);
 //        clase1.igualValores();
     }
@@ -77,7 +78,7 @@ public class Controlador {
         golosinas[0] = golosina1;
         golosinas[1] = golosina2;
         golosinas[2] = golosina3;
-
+        golosinas[3] = golosina4;
         Clase1 clase1 = new Clase1(10, golosinas);
 //        clase1.agregar();
     }
@@ -86,7 +87,7 @@ public class Controlador {
         golosinas[0] = golosina1;
         golosinas[1] = golosina2;
         golosinas[2] = golosina3;
-
+        golosinas[3] = golosina4;
         Clase1 clase1 = new Clase1(10, golosinas);
 //        clase1.busquedaMultiple();
     }
@@ -95,7 +96,7 @@ public class Controlador {
         golosinas[0] = golosina1;
         golosinas[1] = golosina2;
         golosinas[2] = golosina3;
-
+        golosinas[3] = golosina4;
         Clase1 clase1 = new Clase1(10, golosinas);
 //        clase1.distintosValores();
     }
@@ -104,7 +105,7 @@ public class Controlador {
         golosinas[0] = golosina1;
         golosinas[1] = golosina2;
         golosinas[2] = golosina3;
-
+        golosinas[3] = golosina4;
         Clase1 clase1 = new Clase1(10, golosinas);
 //        clase1.copiarLista();
     }
