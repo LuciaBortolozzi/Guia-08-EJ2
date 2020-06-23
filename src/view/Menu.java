@@ -1,7 +1,6 @@
 package view;
 
 import controller.Controlador;
-import controller.Excepciones;
 
 public class Menu {
 
