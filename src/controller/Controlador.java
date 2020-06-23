@@ -1,7 +1,7 @@
 package controller;
 import model.*;
-import view.Mostrar;
 
+import java.io.FileNotFoundException;
 import java.util.*;
 
 public class Controlador {
@@ -10,7 +10,7 @@ public class Controlador {
     static Golosinas golosina3 = new Golosinas(1247, "Bazooka", new String[]{"dulce", "acido"}, 98.6);
     static Golosinas golosina4 = new Golosinas(1248, "Rocklets", new String[]{"dulce", "amargo"}, 98.9);
     static Golosinas[] golosinas = new Golosinas[4];
-
+    static String concatenado = " ";
 
 
     public Controlador(){
@@ -26,7 +26,10 @@ public class Controlador {
         golosinas[3] = golosina4;
         Clase1 clase1 = new Clase1(10, golosinas);
         int max = clase1.maximoValor();
-        Mostrar.mostrar("Maximo: " + max);
+
+        colectar("Maximo: " + max);
+
+
     }
 
     public static void opcion1() {
@@ -42,7 +45,8 @@ public class Controlador {
         } catch (Excepciones excepciones) {
             excepciones.printStackTrace();
         }
-        Mostrar.mostrar(golosina3.getDescripcion() + " ha sido borrada");
+
+        colectar(golosina3.getDescripcion() + " ha sido borrada");
 
     }
 
@@ -65,9 +69,11 @@ public class Controlador {
         boolean repetidos = clase1.hayRepetidos();
 
         if (repetidos) {
-            Mostrar.mostrar("Hay repetidos");
+            colectar("Hay repetidos");
+
         } else {
-            Mostrar.mostrar("No hay repetidos");
+            colectar("No hay repetidos");
+
         }
     }
 
@@ -85,9 +91,9 @@ public class Controlador {
         boolean distinto = clase1.igualValores(enterosAux);
 
         if (!distinto) {
-            Mostrar.mostrar("Hay valores en comun");
+            colectar("Hay valores en comun");
         } else {
-            Mostrar.mostrar("No hay valores en comun");
+            colectar("No hay valores en comun");
         }
     }
 
@@ -145,5 +151,18 @@ public class Controlador {
         clase1.copiarLista(pos1, pos2);
     }
 
+    public static String colectar(String texto){
 
+        concatenado += texto + " | ";
+        
+        return concatenado;
+    }
+
+    public static void opcionGrabar() {
+        try {
+            Grabar.grabar(concatenado);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 }

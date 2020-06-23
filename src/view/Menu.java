@@ -1,7 +1,6 @@
 package view;
 
 import controller.Controlador;
-import controller.Excepciones;
 
 public class Menu {
 
@@ -69,6 +68,7 @@ public class Menu {
                     Controlador.opcion8();
                     break;
                 case 9:
+                    Controlador.opcionGrabar();
                     System.exit(0);
             }
         } while (true);
